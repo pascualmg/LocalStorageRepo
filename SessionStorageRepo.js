@@ -37,7 +37,10 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
 
   this.read = function read(key, value) {
     return this.repo.filter(function (item) {
-      return (item.key === value);
+        //  console.log(item);
+
+      //object as array dereference.
+      return (item[key] === value);
     })
   };
 
