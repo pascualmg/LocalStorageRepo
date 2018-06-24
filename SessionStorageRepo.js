@@ -57,13 +57,7 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
   }
   
   this._exists = function _exists(key, value) {
-    exists = false;
-    var concordo = this.read(key,value);
-    
-        debugger;
-    var exists = concordo.length !== 0;
-    
-    return exists
+    return this.read(key,value).length;
   }
 }
 
