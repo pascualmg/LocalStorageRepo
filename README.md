@@ -6,14 +6,14 @@ is write in pure ES5 and implements a comple generic CRUD.
 include as script for prod
 ```
 <script>
-  https://cdn.rawgit.com/pascualmg/SessionStorageRepo/master/SessionStorageRepo.js
+  https://cdn.rawgit.com/pascualmg/LocalStorageRepo/master/SessionStorageRepo.js
 </script>
 ```
 
 include as script for devel
 ```
 <script>
-https://rawgit.com/pascualmg/SessionStorageRepo/master/SessionStorageRepo.js
+https://rawgit.com/pascualmg/LocalStorageRepo/master/SessionStorageRepo.js
 </script>
 ```
 
