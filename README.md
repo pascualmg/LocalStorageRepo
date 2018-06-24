@@ -23,8 +23,8 @@ https://rawgit.com/pascualmg/LocalStorageRepo/master/SessionStorageRepo.js
 
 repoFoo = (new namespace.SessionStorageRepo('foo', 'idFoo'))
 try {
-  //fixtures
-  for (i = 100; i >= 0; i--) {
+  //fixtures. create 1000 items in the repo . 
+  for (i = 1000; i >= 0; i--) {
     repoFoo.create({
       idFoo: i,
       data: "data" + i
