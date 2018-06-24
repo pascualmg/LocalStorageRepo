@@ -61,9 +61,9 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
 }
 
 
-var PCC = PCC || {};
-PCC.SessionStorageRepo = SessionStorageRepo;
+var namespace = namespace || {};
+namespace.SessionStorageRepo = SessionStorageRepo;
 
 var exports = exports || {};
-exports.PCC = PCC;
+exports.namespace = namespace;
 
