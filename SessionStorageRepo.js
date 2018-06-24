@@ -20,14 +20,13 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
     throw("default parameter constructor repoNameStr missing");
   };
   var voidRepo = [];
-  this.rawRepo = sessionStorage.getItem(repoNameStr)
-    || sessionStorage.setItem(repoNameStr, JSON.stringify(voidRepo));
+   sessionStorage.getItem(repoNameStr) || sessionStorage.setItem(repoNameStr, JSON.stringify(voidRepo));
 
-  this.repo = JSON.parse(this.rawRepo);
+  this.repo = JSON.parse(sessionStorage.getItem(repoNameStr));
 
   //publics
   this.create = function create(item) {
-    if (read(metadataIdStr, item.metadataIdStr)) {
+    if (this.read(metadataIdStr, item.metadataIdStr)) {
         throw "element exists, delete first or update";
     }
     this.repo.push(item);
@@ -55,4 +54,3 @@ namespace.SessionStorageRepo = SessionStorageRepo;
 
 var exports = exports || {};
 exports.namespace = namespace;
-
