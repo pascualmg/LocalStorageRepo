@@ -24,6 +24,7 @@
   "homepage": "https://github.com/pascualmg/SessionStorageRepo#readme",
   "dependencies": {},
   "devDependencies": {
+    "eslint": "^5.0.0",
     "jest": "^23.1.0"
   }
 }
