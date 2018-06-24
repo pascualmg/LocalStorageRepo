@@ -10,7 +10,7 @@
  */
 function SessionStorageRepo(repoNameStr, metadataIdStr) {
     //asserts
-    if (!sessionStorage) {
+    if (!localStorage) {
         throw ("upps , navigator too old")
     } //set defaults or trhow
 
@@ -22,8 +22,8 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
     }
     var voidRepo = [
     ]
-    sessionStorage.getItem(repoNameStr) || sessionStorage.setItem(repoNameStr, JSON.stringify(voidRepo))
-    this.repo = JSON.parse(sessionStorage.getItem(repoNameStr))
+    localStorage.getItem(repoNameStr) || localStorage.setItem(repoNameStr, JSON.stringify(voidRepo))
+    this.repo = JSON.parse(localStorage.getItem(repoNameStr))
     //publics
     this.create = function create(item) {
         var id2Create = item[this.metadataIdStr]
@@ -31,7 +31,7 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
             throw "element exists, delete first or update"
         }
         this.repo.push(item)
-        sessionStorage.setItem(this.repoNameStr, JSON.stringify(this.repo))
+        localStorage.setItem(this.repoNameStr, JSON.stringify(this.repo))
     }
     this.read = function read(key, value) {
         return this.repo.filter(function (item) {
