@@ -15,10 +15,10 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
     throw("upps , navigator too old");
   }
 
-  //set defaults privates.
-  this.repoNameStr = repoNameStr || function usage() {
-    throw("default parameter constructor repoNameStr missing");
-  };
+  //set defaults or trhow
+  this.repoNameStr = repoNameStr || function (){throw("default parameter constructor repoNameStr missing")};
+  this.metadataIdStr = metadataIdStr || function(){throw("default parameter constructor metadataIdStr missing")};
+  
   var voidRepo = [];
    sessionStorage.getItem(repoNameStr) || sessionStorage.setItem(repoNameStr, JSON.stringify(voidRepo));
 
@@ -26,9 +26,11 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
 
   //publics
   this.create = function create(item) {
-    if (this.read(metadataIdStr, item.metadataIdStr)) {
+    
+    if (this._exists(metadataIdStr, item.metadataIdStr)) {
         throw "element exists, delete first or update";
     }
+    
     this.repo.push(item);
     sessionStorage.setItem(this.repoNameStr, JSON.stringify(this.repo));
   };
@@ -43,8 +45,15 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
     //todo stub
   };
 
-  this.del = function del() {
+  this.del = function del(id) {
+    this.read(this.metadataIdStr, id);
+    
+    
     //todo stub
+  }
+  
+  this._exists = function _exists(key, value) {
+    return this.read(key,value) === [];
   }
 }
 
