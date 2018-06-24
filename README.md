@@ -18,3 +18,21 @@ https://rawgit.com/pascualmg/SessionStorageRepo/master/SessionStorageRepo.js
 ```
 
 (https://stackoverflow.com/questions/6551446/can-i-run-html-files-directly-from-github-instead-of-just-viewing-their-source)
+
+```
+
+repoFoo = (new namespace.SessionStorageRepo('foo', 'idFoo'))
+try {
+  //fixtures
+  for (i = 100; i >= 0; i--) {
+    repoFoo.create({
+      idFoo: i,
+      data: "data" + i
+    })
+  }
+} catch (e) {
+  console.log(e)
+}
+console.log(repoFoo.read('data', '8==D'))
+console.log(repoFoo.read('idFoo', '11334') [0])
+```
