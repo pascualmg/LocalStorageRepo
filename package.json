@@ -1,0 +1,25 @@
+{
+  "name": "sessionstoragerepo",
+  "version": "1.0.0",
+  "description": "Generic CRUD repo generator that uses only one unique key of the sessionStorage",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pascualmg/SessionStorageRepo.git"
+  },
+  "keywords": [
+    "repo",
+    "session",
+    "storage",
+    "utils"
+  ],
+  "author": "pascualmg <pascual.munoz@pccomponentes.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pascualmg/SessionStorageRepo/issues"
+  },
+  "homepage": "https://github.com/pascualmg/SessionStorageRepo#readme"
+}
