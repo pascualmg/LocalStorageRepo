@@ -20,8 +20,7 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
     this.metadataIdStr = metadataIdStr || function () {
         throw ("default parameter constructor metadataIdStr missing")
     }
-    var voidRepo = [
-    ]
+    var voidRepo = []
     localStorage.getItem(repoNameStr) || localStorage.setItem(repoNameStr, JSON.stringify(voidRepo))
     this.repo = JSON.parse(localStorage.getItem(repoNameStr))
     //publics
