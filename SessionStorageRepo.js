@@ -26,8 +26,9 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
 
   //publics
   this.create = function create(item) {
+    var id2Create = item[this.metadataIdStr];
     
-    if (this._exists(metadataIdStr, item.metadataIdStr)) {
+    if (this._exists(this.metadataIdStr, id2Create)) {
         throw "element exists, delete first or update";
     }
     
@@ -56,7 +57,13 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
   }
   
   this._exists = function _exists(key, value) {
-    return this.read(key,value) === [];
+    exists = false;
+    var concordo = this.read(key,value);
+    
+        debugger;
+    var exists = concordo.length !== 0;
+    
+    return exists
   }
 }
 
