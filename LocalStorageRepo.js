@@ -31,7 +31,7 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
             throw "element exists, delete first or update"
         }
         this.repo.push(item)
-        this._flushRepo(this.repo);
+        this._flushRepo(this.repo)
     }
     this.read = function read(key, value) {
         return this.repo.filter(function (item) {
@@ -47,28 +47,28 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
     }
     this.del = function del(id) {
         if (!this._exists(id)){
-            console.info("element with id " + id + "does not exist");
-            return false;
+            console.info("element with id " + id + "does not exist")
+            return false
         }
         
         var mutatedRepo = this.repo.filter.call(this,function(item){
-            debugger;
-            return item["idFoo"] != id;
+            
+            return item["idFoo"] != id
         })
      
-        this.repo = mutatedRepo;
-        this._flushRepo(this.repo);
+        this.repo = mutatedRepo
+        this._flushRepo(this.repo)
     }
     
     //stub not working , delete if not used
     this._indexOf = function _indexOf(id){
-        var index = undefined;        
+        var index = undefined        
         this.repo.forEach(function(item,it){
             if(item[this.metadataIdStr] == id){
-                index = it;
-               }
-        });
-        return index;
+                index = it
+            }
+        })
+        return index
     }
     this._exists = function _exists(key, value) {
         return this.read(key, value).length
