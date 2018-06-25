@@ -1,3 +1,4 @@
+
 /**
  * Repo generator that uses only one unique key of the sessionStorage
  * in a unique Objects Array . [{},{},...]
@@ -30,7 +31,7 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
             throw "element exists, delete first or update"
         }
         this.repo.push(item)
-        localStorage.setItem(this.repoNameStr, JSON.stringify(this.repo))
+        this._flushRepo(this.repo);
     }
     this.read = function read(key, value) {
         return this.repo.filter(function (item) {
@@ -41,15 +42,39 @@ function SessionStorageRepo(repoNameStr, metadataIdStr) {
     this.findOneById = function findOneByid(id) {
         return this.read(this.metadataIdStr, id) [0]
     }
-    this.update = function update() {
-    //todo stub
+    this.update = function update(criteria, payload) {
+        //todo
     }
     this.del = function del(id) {
-        this.read(this.metadataIdStr, id)
-    //todo stub
+        if (!this._exists(id)){
+            console.info("element with id " + id + "does not exist");
+            return false;
+        }
+        
+        var mutatedRepo = this.repo.filter.call(this,function(item){
+            debugger;
+            return item["idFoo"] != id;
+        })
+     
+        this.repo = mutatedRepo;
+        this._flushRepo(this.repo);
+    }
+    
+    //stub not working , delete if not used
+    this._indexOf = function _indexOf(id){
+        var index = undefined;        
+        this.repo.forEach(function(item,it){
+            if(item[this.metadataIdStr] == id){
+                index = it;
+               }
+        });
+        return index;
     }
     this._exists = function _exists(key, value) {
         return this.read(key, value).length
+    }
+    this._flushRepo = function _flushRepo(repo) {
+        localStorage.setItem(repoNameStr, JSON.stringify(repo))
     }
 }
 
