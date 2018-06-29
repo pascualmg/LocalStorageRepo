@@ -30,7 +30,8 @@ var getFooFromStorageLoL = new Function( "return " + (new LocalStorageRepo("func
 var foo = getFooFromStorageLoL();
 //now you can use your foo as allways... 
 
-```javascript
+```
+
 save an Oajax response.... and all that you wants , if it can be stored in a nutshell of course ^^
 ```javascript
 rxjs.ajax("/my/great/stuff").subscribe(repo.create)
