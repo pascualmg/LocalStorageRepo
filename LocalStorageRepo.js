@@ -109,7 +109,7 @@ function LocalStorageRepo(repoNameStr, metadataIdStr) {
 //endregion Functions
 }
 var namespace = namespace || {}
-namespace.LocalStorage = LocalStorageRepo
+namespace.LocalStorageRepo = LocalStorageRepo
 
 var exports = exports || {}
 exports.namespace = namespace
