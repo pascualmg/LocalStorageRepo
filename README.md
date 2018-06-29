@@ -25,6 +25,11 @@ functions = new LocalStorageRepo("functions", "name")
 functions.update({name:"somefunc", text: sumefunc.toString()})
 eval((functions.findOneById("somefunc").text)
 ```
+save an Oajax response.... and all that you wants , if it can be stored in a nutshell of course ^^
+```
+rxjs.ajax("/my/great/stuff").subscribe(repo.create)
+```
+
 # Instalation
 include as script for prod
 ```
@@ -60,7 +65,7 @@ or copypaste in console https://github.com/pascualmg/LocalStorageRepo/blob/maste
           repo.update({id:1, data1: i + "updated", newfields:"more data"});
         }
 		
-		repo.findAll()
+	console.log(repo.findAll())
 
       }
 ```
