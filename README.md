@@ -20,7 +20,7 @@ petsRepo.findBy("specie" , "cat");//find all cats only , no dogs.
 ```
 
 but you can do some other stuff , like ... store functions as text indexed by name and rerun later ;) dont know why someone want to do this :P
-```
+```javascript
 functions = new LocalStorageRepo("functions", "name")
 functions.update({name:"somefunc", text: sumefunc.toString()})
 eval((functions.findOneById("somefunc").text)
