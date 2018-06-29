@@ -2,7 +2,30 @@
 A repo generator that uses only on key of the sessionStorage to store all data in a unique Array.
 is write in pure ES5 and implements a comple generic CRUD.
 
-# test quickly 
+# Goals
+To have a generic repo (CRUD) generator linked to one key of the LocalStorage for use it as a lightweitgt persistence system directly in the browser.
+
+## you can use for ...
+some examples
+Store all data you need indexed and easly accesible as you can do with a "repo" as in a ficticial animal clinic.
+```
+petsRepo = new LocalStorageRepo("pets" , "name");
+productRepo = new LocalStorageRepo("products", "idProduct");
+
+petsRepo.create({name:"kytybity", specie: "cat", clinicalData:"have a large tail"});
+petsRepo.create({name:"rufo", specie: "dog", clinicalData:"Wooof"});
+console.log ( petsRepo.findOneById("kytybity") )
+petsRepo.update({name:"kytybity", specie: "cat", clinicalData:"have no tail, we cut it"});
+petsRepo.findBy("specie" , "cat");//find all cats only , no dogs.
+```
+
+but you can do some other stuff , like ... store functions as text indexed by name and rerun later ;) dont know why someone want to do this :P
+```
+functions = new LocalStorageRepo("functions", "name")
+functions.update({name:"somefunc", text: sumefunc.toString()})
+eval((functions.findOneById("somefunc").text)
+```
+# Instalation
 include as script for prod
 ```
 <script>
