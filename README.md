@@ -16,7 +16,7 @@ include as script for devel
 https://rawgit.com/pascualmg/LocalStorageRepo/master/SessionStorageRepo.js
 </script>
 ```
-or copypaste in console :) 
+or copypaste in console https://github.com/pascualmg/LocalStorageRepo/blob/master/LocalStorageRepo.js  
 
 (https://stackoverflow.com/questions/6551446/can-i-run-html-files-directly-from-github-instead-of-just-viewing-their-source)
 
