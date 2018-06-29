@@ -41,14 +41,14 @@ rxjs.ajax("/my/great/stuff").subscribe(repo.create)
 include as script for prod
 ```html
 <script>
-  https://cdn.rawgit.com/pascualmg/LocalStorageRepo/master/SessionStorageRepo.js
+  https://cdn.rawgit.com/pascualmg/LocalStorageRepo/master/LocalStorageRepo.js
 </script>
 ```
 
 include as script for devel
 ```html
 <script>
-https://rawgit.com/pascualmg/LocalStorageRepo/master/SessionStorageRepo.js
+https://rawgit.com/pascualmg/LocalStorageRepo/master/LocalStorageRepo.js
 </script>
 ```
 or copypaste in console https://github.com/pascualmg/LocalStorageRepo/blob/master/LocalStorageRepo.js  
