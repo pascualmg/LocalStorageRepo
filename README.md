@@ -7,7 +7,7 @@ To have a generic repo (CRUD) generator linked to one key of the LocalStorage fo
 
 ## you can use for ...
 some examples
-Store all data you need indexed and easly accesible as you can do with a "repo" as in a ficticial animal clinic.
+Store all data you need indexed and easly accesible as you can do with a "repo" as in a imaginary animal clinic.
 ```
 petsRepo = new LocalStorageRepo("pets" , "name");
 productRepo = new LocalStorageRepo("products", "idProduct");
