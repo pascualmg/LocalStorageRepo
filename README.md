@@ -26,7 +26,7 @@ functions.update({name:"somefunc", text: sumefunc.toString()})
 eval((functions.findOneById("somefunc").text)
 
 or if you want avoid "eval" you can do like this too ( is a bit more  hkr ... XD)
-var getFooFromStorageLoL = new Function( "return " + (new LocalStorageRepo("functions", "name")).findOneById("LocalStorageRepo").text )
+var getFooFromStorageLoL = new Function( "return " + (new LocalStorageRepo("functions", "name")).findOneById("foo").text )
 var foo = getFooFromStorageLoL();
 //now you can use your foo as allways... 
 
