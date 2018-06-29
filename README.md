@@ -44,7 +44,7 @@ or copypaste in console https://github.com/pascualmg/LocalStorageRepo/blob/maste
 (https://stackoverflow.com/questions/6551446/can-i-run-html-files-directly-from-github-instead-of-just-viewing-their-source)
 
 
-# functional load test create 1001 elements , delete 500 update 500 
+## functional load test create 1001 elements , delete 500 update 500 
 ```
  function testInBrowser() {
         var repo = (new LocalStorageRepo("logs", "id"));
@@ -64,12 +64,12 @@ or copypaste in console https://github.com/pascualmg/LocalStorageRepo/blob/maste
 
       }
 ```
-# Unitary test with jest
+## Unitary test with jest
 ```
 npm install
 npm test
 ```
 
-# Limitations
+## Limitations
 The max quote , is the max quote of a key -> value in the DataStorage in your navigator . 
 
