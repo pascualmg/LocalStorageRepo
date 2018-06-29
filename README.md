@@ -1,9 +1,9 @@
-# LocalStorageRepo
+# LocalStorageRepo in a nutShell
 A repo generator that uses only on key of the sessionStorage to store all data in a unique Array.
 is write in pure ES5 and implements a comple generic CRUD.
 
 # Goals
-To have a generic repo (CRUD) generator linked to one key of the LocalStorage for use it as a lightweitgt persistence system directly in the browser.
+To have a generic repo (CRUD) generator linked to one key of the LocalStorage for use it as a lightweitgt persistence system directly in the browser. 
 
 ## you can use for ...
 some examples
@@ -43,6 +43,8 @@ or copypaste in console https://github.com/pascualmg/LocalStorageRepo/blob/maste
 
 (https://stackoverflow.com/questions/6551446/can-i-run-html-files-directly-from-github-instead-of-just-viewing-their-source)
 
+
+# functional load test create 1001 elements , delete 500 update 500 
 ```
  function testInBrowser() {
         var repo = (new LocalStorageRepo("logs", "id"));
@@ -62,3 +64,12 @@ or copypaste in console https://github.com/pascualmg/LocalStorageRepo/blob/maste
 
       }
 ```
+# Unitary test with jest
+```
+npm install
+npm test
+```
+
+# Limitations
+The max quote , is the max quote of a key -> value in the DataStorage in your navigator . 
+
