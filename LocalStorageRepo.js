@@ -1,9 +1,9 @@
 /**
- * Repo generator that uses only one unique key of the sessionStorage
+ * Repo generator that uses only one unique key of the LocalStorage
  * in a unique Objects Array . [{},{},...]
  * @todo: update , findBy , findOneBy , findAll , reset
  * Object pattern.
- * @param repoNameStr Repo's name , is a unique key of the sessionStorage.
+ * @param repoNameStr Repo's name , is a unique key of the LocalStorage.
  * @param metadataIdStr Is the unique key that we can use in the find operation
  * @returns {{create: create, read: (function(*, *): *), update: update, delete: del}}
  * @constructor
@@ -109,7 +109,7 @@ function LocalStorageRepo(repoNameStr, metadataIdStr) {
 //endregion Functions
 }
 var namespace = namespace || {}
-namespace.SessionStorageRepo = SessionStorageRepo
+namespace.LocalStorage = LocalStorageRepo
 
 var exports = exports || {}
 exports.namespace = namespace
