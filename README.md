@@ -8,7 +8,7 @@ To have a generic repo (CRUD) generator linked to one key of the LocalStorage fo
 ## you can use for ...
 some examples
 Store all data you need indexed and easly accesible as you can do with a "repo" as in a imaginary animal clinic.
-```
+```javascript
 petsRepo = new LocalStorageRepo("pets" , "name");
 productRepo = new LocalStorageRepo("products", "idProduct");
 
@@ -30,22 +30,22 @@ var getFooFromStorageLoL = new Function( "return " + (new LocalStorageRepo("func
 var foo = getFooFromStorageLoL();
 //now you can use your foo as allways... 
 
-```
+```javascript
 save an Oajax response.... and all that you wants , if it can be stored in a nutshell of course ^^
-```
+```javascript
 rxjs.ajax("/my/great/stuff").subscribe(repo.create)
 ```
 
 # Instalation
 include as script for prod
-```
+```html
 <script>
   https://cdn.rawgit.com/pascualmg/LocalStorageRepo/master/SessionStorageRepo.js
 </script>
 ```
 
 include as script for devel
-```
+```html
 <script>
 https://rawgit.com/pascualmg/LocalStorageRepo/master/SessionStorageRepo.js
 </script>
@@ -56,7 +56,7 @@ or copypaste in console https://github.com/pascualmg/LocalStorageRepo/blob/maste
 
 
 ## functional load test create 1001 elements , delete 500 update 500 
-```
+```javascript
  function testInBrowser() {
         var repo = (new LocalStorageRepo("logs", "id"));
         repo.reset();
@@ -76,7 +76,7 @@ or copypaste in console https://github.com/pascualmg/LocalStorageRepo/blob/maste
       }
 ```
 ## Unitary test with jest
-```
+```bash
 npm install
 npm test
 ```
